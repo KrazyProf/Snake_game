@@ -10,10 +10,18 @@ class Score(Turtle):
         self.hideturtle()
         self.penup()
         self.goto(0, 250)
+        self.display_score()
+
+    
+    def display_score(self):
         self.write( arg= f"Score: {self.score}", move=False, align="center", font=('Arial', 24, 'normal'))
 
-        
     def update_score(self):
         self.score += 1
         self.clear()
-        self.write( arg= f"Score: {self.score}", move=False, align="center", font=('Arial', 24, 'normal'))
+        self.display_score()
+    
+    def game_over(self):
+        self.goto(0,0)
+        self.write( arg= "Game Over.", move=False, align="center", font=('Arial', 24, 'normal'))
+    

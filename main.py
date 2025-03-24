@@ -27,7 +27,11 @@ while not is_over:
     time.sleep(0.1)
 
     snake.move()
-
+    
+    # Detecting Collision with wall
+    if snake.head.xcor() > 270 or snake.head.xcor() < -270 or snake.head.ycor() > 270 or snake.head.ycor() < -270:
+        score.game_over()
+        break
     # Detecting collision
     if snake.head.distance(food) < 14:
         
@@ -38,6 +42,7 @@ while not is_over:
         # adding body parts
         snake.add_body_part()
         
-        
+
+
 
 screen.exitonclick()
