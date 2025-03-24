@@ -29,12 +29,10 @@ while not is_over:
     snake.move()
     
     # Detecting Collision with wall
-    if snake.head.xcor() > 270 or snake.head.xcor() < -270 or snake.head.ycor() > 270 or snake.head.ycor() < -270:
+    if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
         score.game_over()
         break
-
-    if snake.head.distance(snake.snake_body[-1]) < 14:
-        print('crash')
+    
     # Detecting collision
     if snake.head.distance(food) < 14:
         
@@ -46,10 +44,8 @@ while not is_over:
         snake.add_body_part()
         
 
-    for segment in snake.snake_body:
-        if segment == snake.head:
-            pass
-        elif snake.head.distance(segment) < 10:
+    for segment in snake.snake_body[1:]:
+        if snake.head.distance(segment) < 10:
             score.game_over()
             is_over = True
             break
