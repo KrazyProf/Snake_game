@@ -44,4 +44,11 @@ class Snake:
             self.snake_body[i].goto(self.snake_body[i - 1].position())
 
         self.head.fd(MOVE_DISTANCE)
- 
+    
+    def add_body_part(self):
+
+        new_body = Turtle(shape='square')
+        new_body.penup()
+        new_body.color('white')
+        new_body.goto(self.snake_body[-2].position())
+        self.snake_body.append(new_body)

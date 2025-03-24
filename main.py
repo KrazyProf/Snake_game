@@ -35,6 +35,9 @@ while not is_over:
         food.refresh()  
         # updating the score
         score.update_score()
+        # adding body parts
+        snake.add_body_part()
+        
         
 
 screen.exitonclick()
